@@ -1,0 +1,238 @@
+/*Generel styling*/
+
+* { /*alt på siden bliver påvirket*/
+	box-sizing: border-box; /*Padding og border inkluderes i bredde og højde*/
+	margin: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 3em 0 0 0; /*Resetting af margin i hele bodyen + tilføjer luft under kontaktformular*/
+    background-color: #DDDBDD;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+
+h1{
+	text-transform: uppercase; /*Teksten transformeres til udelukkende at være store bogstaver*/
+}
+
+.kontakt-tekst{
+	font-weight: 200;
+	font-size: 22px;
+}
+
+.under{
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+
+
+/*Navigation start*/
+header nav{
+	background-color: #C9CCC8;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img{
+	height: 6em;
+	width: auto;
+}
+
+nav ul {
+	display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav li a {
+	text-decoration: none;
+	padding: 1em;
+	font-size: 20px;
+	color:#000000;
+	text-transform: uppercase;
+}
+
+nav a:hover{
+	color: #a4aca1;
+	transition: 0.5s; /*skaber en mere blød overgang mellem linkfarverne*/
+}
+
+.hænder{
+	background-image: url("../img/first.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+	color:white;
+    font-size: 40px;
+    text-align: left;
+    margin: 0;
+    padding: 20px;
+    height: 80vh;
+}
+
+/*Kontaktform*/
+
+
+.kontaktform {
+  border-radius: 6px;
+  background-color: #C9CCC8 ;
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto; /*Centrerer elementet på siden*/
+  margin-top: 2em;
+}
+
+.kontakt-tekst{
+	padding: 1em 0 0 0;
+}
+
+.under{
+	padding: 2em 0 2em 0;
+}
+
+input[type=text], input[type=email], input[type=tel],select, textarea{
+	width: 100%;
+	padding: 1em;
+	border: 1px solid #C9CCC8 ;
+	border-radius: 4px;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+}
+
+select, input[type=checkbox], input[type=radio], input[type=submit]{
+	cursor: pointer;
+}
+
+fieldset{
+	border-color: #a4aca1;
+	border-style: dotted;
+	margin-bottom: 0.8em;
+
+}
+
+input[type=checkbox]{
+	margin: 0.8em 0;
+}
+
+input[type=submit]{
+	background-color: #DDDBDD;
+	color: black;
+	padding: 0.8em 1.5em;
+	border: none;
+	border-radius: 4px;
+	width: 100%;
+	font-size: 18px;
+
+}
+
+
+input[type=submit]:hover{
+	background-color: #a4aca1;
+}
+
+/*Andre style elementer*/
+
+.visually-hidden{ /*WCAG defineret class som fjerner element fra skærm, men som stadig kan læses af skærmlæseren*/
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #DDDBDD;
+    padding: 3.2em;
+
+    scroll-behavior: smooth;
+}
+
+.bundtekst{
+    margin: 0;
+    color: black;
+    font-size: 1rem;
+}
+
+
+.sociale-medier i {
+    font-size: 1.8rem;
+    color: black;
+    margin-left: 0.5em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sociale-medier i:hover {
+    color: #555;
+    transform: scale(1.1);
+}
+
+/*desktop version*/
+@media screen and (min-width: 768px){
+    #bars{
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*tablet og mobil version*/
+@media screen and (max-width:768px){
+    header nav ul {
+        display: none;
+    }
+    
+    header {
+    background-color: #C9CCC8;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    header nav {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        padding: 0;
+        width: 0;
+    }
+
+    nav.show ul {
+        display: block;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #C9CCC8;
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    button#bars{
+        background-color: transparent;
+        border: none;
+        font-size: 34px;
+        cursor: pointer;
+        margin-left: auto;
+        z-index: 999;
+    }
+
+	.kontaktform {
+		width: fit-content;
+	}
+}
